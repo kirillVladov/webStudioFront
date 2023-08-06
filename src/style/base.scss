@@ -1,0 +1,35 @@
+@import "./common/social-list";
+@import "./common/button";
+@import "common/section-header";
+@import "common/button-group";
+@import "layout/footer";
+@import "variables";
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Urbanist', sans-serif;
+}
+
+a {
+  //text-decoration: none;
+}
+
+.white-rabbit {
+  font-family: 'White Rabbit Regular';
+}
+
+.logo > svg {
+  width: 100px;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+@font-face {
+  font-family: 'White Rabbit Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('White Rabbit Regular'), url('src/assets/fonts/WHITRABT.woff') format('woff');
+}

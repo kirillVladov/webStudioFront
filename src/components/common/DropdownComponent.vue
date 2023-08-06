@@ -1,0 +1,71 @@
+<script lang="ts" setup>
+import type {DropdownList} from "../../../types/common/Dropdown";
+import {onBeforeMount, onMounted, type Ref, ref} from "vue";
+
+const props = defineProps({
+    list: {
+      type: Array as () => DropdownList[],
+      required: true,
+    },
+    title: {
+      type: String,
+      default: "Select"
+    },
+    selectedItem: {
+      type: Object as () => DropdownList,
+      default: null,
+    },
+    classWhite: {
+        type: Boolean,
+        default: false,
+    }
+})
+const selectedItem: Ref<DropdownList | null> = ref(null);
+const isOpenList: Ref<boolean> = ref(false)
+const emit = defineEmits(["select"]);
+
+onBeforeMount(() => {
+    if(props.selectedItem) {
+        selectedItem.value = props.selectedItem;
+    }
+})
+
+const onOpen = (): void => {
+    isOpenList.value = !isOpenList.value;
+}
+
+const onSelect = (item: DropdownList): void => {
+    selectedItem.value = item;
+    isOpenList.value = false;
+    emit("select", item);
+}
+
+const onOutsideClick = (): void => {
+    isOpenList.value = false;
+}
+</script>
+
+<template>
+  <div class="dropdown" :class="{white: classWhite}" v-click-outside="onOutsideClick">
+      <div class="dropdown__title" @click="onOpen" v-if="!selectedItem">
+        {{title}}
+      </div>
+      <div class="dropdown__selected" @click="onOpen" v-else>
+          {{selectedItem.name}}
+      </div>
+      <div class="dropdown__list" v-if="isOpenList">
+          <div
+                  class="dropdown__item"
+                  v-for="item in list"
+                  :key="`drop-down-item-${item.value}`"
+                  @click="onSelect(item)"
+          >
+              {{item.name}}
+          </div>
+      </div>
+  </div>
+</template>
+
+<style lang="scss" scoped>
+  @import "src/style/common/dropdown";
+</style>

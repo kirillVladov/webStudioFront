@@ -1,0 +1,16 @@
+.section-header {
+  display: flex;
+  font-family: 'Source Code Pro', monospace;
+  font-weight: 900;
+  font-size: 32px;
+
+  &:before {
+    content: "> ";
+    margin-right: 20px;
+  }
+
+  &:after {
+    content: " _";
+    margin-left: 20px;
+  }
+}

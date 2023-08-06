@@ -1,0 +1,11 @@
+@import "full-screen";
+@import "projects";
+@import "benefits";
+@import "team";
+
+.projects,
+.benefits,
+.landing__full-screen,
+.team{
+  padding: 50px 135px;
+}

@@ -1,0 +1,14 @@
+.button-group {
+  display: flex;
+
+  &__item {
+    & .btn {
+      padding: 8px 34px;
+      font-family: "White Rabbit Regular";
+    }
+
+    &:not(:last-of-type) {
+      margin-right: 10px;
+    }
+  }
+}

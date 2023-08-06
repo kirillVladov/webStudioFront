@@ -1,0 +1,28 @@
+@import "../variables";
+
+.btn {
+  width: fit-content;
+  border: solid 2px $color-black;
+  background: $color-white-text;
+  padding: 16px 32px;
+  transition: $transition-delay;
+  cursor: pointer;
+
+  &:hover {
+    color: $color-white-text;
+    background: $color-button-hover;
+  }
+
+  &.purple {
+    background: $color-white-text;
+    color: $color-purple;
+    border: 1px solid $color-purple;
+
+    &:hover,
+    &.active {
+      background: $color-purple;
+      color: $color-white-text;
+      border: 1px solid $color-purple;
+    }
+  }
+}

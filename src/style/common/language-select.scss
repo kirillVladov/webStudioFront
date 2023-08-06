@@ -1,0 +1,15 @@
+@import "../variables";
+
+.language-select {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+
+  & .dropdown {
+    //margin-left: 10px;
+
+    &__selected {
+      color: $color-white-text !important;
+    }
+  }
+}

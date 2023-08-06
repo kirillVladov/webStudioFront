@@ -1,0 +1,51 @@
+@import "../variables";
+
+.landing__full-screen {
+  height: calc(100vh - (50px * 2));
+  width: calc(100% - (135px * 2));
+  background: $full-screen-bg;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 100px;
+    //
+    //& > * {
+    //  display: flex;
+    //  align-items: center;
+    //}
+  }
+
+  &__text {
+    margin: 0 auto;
+    text-align: center;
+    color: $color-white-text;
+    max-width: 842px;
+  }
+
+  &__title {
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 700;
+  }
+
+  &__subtitle {
+    font-weight: 100;
+    font-size: 32px;
+    line-height: 32px;
+  }
+
+  &__headline {
+    line-height: 96px;
+    font-size: 96px;
+    font-weight: 400;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+  }
+
+}

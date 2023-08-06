@@ -1,0 +1,41 @@
+@import "../variables";
+
+.footer {
+  padding: 45px 0;
+  background: #9cbcf8;
+  color: $color-white-text;
+
+  &-logo svg {
+    width: 150px !important;
+  }
+
+  &-wrap {
+    max-width: 82%;
+    margin: 0 auto;
+  }
+
+  &__email-content {
+    font-family: 'Urbanist', sans-serif;
+    font-size: 32px;
+    line-height: 32px;
+    font-weight: 700;
+  }
+
+  &__email-title,
+  &__socials-title {
+    margin: 20px 0;
+  }
+
+  &__links {
+    margin-top: 20px;
+
+    & > a {
+      font-size: 14px;
+      line-height: 22px;
+      color: $color-white-text;
+      &:not(:last-of-type) {
+        margin-right: 20px;
+      }
+    }
+  }
+}
