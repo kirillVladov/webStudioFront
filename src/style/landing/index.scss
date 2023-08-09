@@ -1,11 +1,15 @@
 @import "full-screen";
 @import "projects";
 @import "benefits";
+@import "contact-us";
 @import "team";
+@import "resources";
 
 .projects,
 .benefits,
+.contact-us,
 .landing__full-screen,
+.resources,
 .team{
   padding: 50px 135px;
 }

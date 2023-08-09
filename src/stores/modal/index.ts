@@ -6,7 +6,7 @@ import type {ModalState} from "../../../types/common/modal";
 //     [key: ModalState]: boolean
 // }
 
-const useModalStore = defineStore("modal-store", {
+export const useModalStore = defineStore("modal-store", {
     state: () => (initialStore),
     actions: {
         showModal(key: ModalState) {

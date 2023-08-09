@@ -7,12 +7,26 @@
     text-align: center;
   }
 
+  &-wrap {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 18px;
+  }
+
   &__list {
     position: absolute;
+    max-width: 100%;
     //top: ;
 
     border-radius: 8px;
     background: $color-white-text;
+  }
+
+  &.purple {
+    & .dropdown-wrap{
+      background: rgba(216, 220, 255, 1);
+    }
   }
 
   &__item {

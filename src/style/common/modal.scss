@@ -1,0 +1,36 @@
+.modal-window {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  //opacity: 0.3;
+
+  &__content {
+    padding: 24px;
+    background: radial-gradient(118.15% 189.52% at 85.57% 24.65%, rgba(152, 199, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
+    radial-gradient(91.5% 173.62% at 3.91% 94.68%, rgba(160, 158, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */,
+    linear-gradient(0deg, #FFFFFF, #FFFFFF);
+    min-height: 80%;
+    min-width: 80%;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+
+    &__close {
+      display: flex;
+      align-items: center;
+      vertical-align: middle;
+
+      & svg {
+        margin-left: 10px;
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+.text-area {
+  & textarea {
+    border: none;
+    padding: 12px 18px;
+  }
+
+  &.static textarea {
+    resize: none;
+  }
+}

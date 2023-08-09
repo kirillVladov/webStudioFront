@@ -1,6 +1,8 @@
 <script lang="ts" setup>
 import type {DropdownList} from "../../../types/common/Dropdown";
 import {onBeforeMount, onMounted, type Ref, ref} from "vue";
+import {FALSE} from "sass";
+import SvgArrowDown from "../../assets/svg/common/SvgArrowDown.vue";
 
 const props = defineProps({
     list: {
@@ -14,6 +16,10 @@ const props = defineProps({
     selectedItem: {
       type: Object as () => DropdownList,
       default: null,
+    },
+    classPurple: {
+        type: Boolean,
+        default: false,
     },
     classWhite: {
         type: Boolean,
@@ -46,12 +52,17 @@ const onOutsideClick = (): void => {
 </script>
 
 <template>
-  <div class="dropdown" :class="{white: classWhite}" v-click-outside="onOutsideClick">
-      <div class="dropdown__title" @click="onOpen" v-if="!selectedItem">
-        {{title}}
-      </div>
-      <div class="dropdown__selected" @click="onOpen" v-else>
-          {{selectedItem.name}}
+  <div class="dropdown" :class="{white: classWhite, purple: classPurple}" v-click-outside="onOutsideClick">
+      <div class="dropdown-wrap pointer" @click="onOpen">
+        <div class="dropdown__title" @click="onOpen" v-if="!selectedItem">
+          {{title}}
+        </div>
+        <div class="dropdown__selected" @click="onOpen" v-else>
+            {{selectedItem.name}}
+        </div>
+        <span class="dropdown__arrow" v-if="classPurple || classWhite">
+            <svg-arrow-down />
+        </span>
       </div>
       <div class="dropdown__list" v-if="isOpenList">
           <div

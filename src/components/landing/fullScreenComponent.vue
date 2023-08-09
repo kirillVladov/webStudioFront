@@ -4,6 +4,12 @@ import SocialsListComponent from "../common/SocialsListComponent.vue";
 import LangComponent from "../common/LangComponent.vue";
 import ButtonComponent from "../common/ButtonComponent.vue";
 import WhiteRabbitFontComponent from "../common/WhiteRabbitFontComponent.vue";
+import {useModalStore} from "../../stores/modal";
+
+const modalStore = useModalStore();
+const onClickOpenModal = () => {
+    modalStore.showModal("contactUs")
+}
 </script>
 
 <template>
@@ -34,7 +40,7 @@ import WhiteRabbitFontComponent from "../common/WhiteRabbitFontComponent.vue";
 
       </div>
       <div class="landing__full-screen__button">
-          <button-component title="I have a project to make!">
+          <button-component @press="onClickOpenModal" title="I have a project to make!">
               <template #after-title>
                   >
               </template>

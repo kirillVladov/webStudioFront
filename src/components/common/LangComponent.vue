@@ -22,7 +22,6 @@ const onSelectLang = (item: DropdownList) => {
     <div class="language-select">
       <lang-svg />
       <dropdown-component
-              class-white
               :list="LangList"
               :selected-item="selectedItem"
               @select="onSelectLang"

@@ -1,0 +1,78 @@
+.contact-us-modal {
+  & .modal-window__view {
+    display: flex;
+  }
+
+  &__form,
+  &__contacts {
+    flex: 1 1 50%;
+  }
+
+  &__submit {
+    display: flex;
+
+    & .btn {
+      font-weight: 900;
+      border: none;
+      margin-top: 24px;
+      width: 100%;
+      text-align: center;
+      color: #FFFFFF;
+      background: rgba(101, 107, 255, 1);
+    }
+  }
+
+  &__contacts {
+    & .socials-item svg > path {
+        fill: black;
+    }
+
+    &__email-title,
+    &__socials-title {
+      margin-bottom: 16px;
+    }
+
+    &__email {
+      margin-bottom: 24px;
+
+      &-value {
+        font-family: 'Urbanist', sans-serif;
+        font-size: 32px;
+        line-height: 32px;
+        font-weight: 700;
+      }
+    }
+  }
+
+  &__form {
+    &__name input,
+    &__email input,
+    &__faq .text-area {
+      width: calc(100% - 35px);
+      margin-top: 0 !important;
+      margin-bottom: 18px !important;
+    }
+
+    &__header {
+      line-height: 32px;
+      font-size: 32px;
+      font-weight: 700;
+    }
+
+    &__description {
+      line-height: 19px;
+      color: rgba(71, 84, 103, 1);
+      font-weight: 300;
+      margin-top: 14px;
+      margin-bottom: 30px;
+    }
+
+    &__faq .text-area {
+      height: 300px;
+    }
+
+    &__type .dropdown{
+      margin-bottom: 18px;
+    }
+  }
+}
