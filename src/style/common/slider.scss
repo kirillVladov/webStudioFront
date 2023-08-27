@@ -25,7 +25,12 @@
 
   &__list {
     display: flex;
-    overflow: scroll;
+    overflow: hidden;
+    width: 100%;
+
+    & .swiper-wrapper {
+      display: flex !important;
+    }
   }
 
   &__item {
@@ -44,7 +49,7 @@
       min-width: 240px;
       max-height: 320px;
       max-width: 240px;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
 
       & > img {
         max-width: 100%;

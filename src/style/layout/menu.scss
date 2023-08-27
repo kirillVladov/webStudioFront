@@ -1,0 +1,35 @@
+@import "@/style/variables";
+
+.menu-services {
+  margin-right: 20px;
+
+  &__item  {
+    padding: 15px 40px;
+    transition: .3s;
+
+    &:has(a.router-link-active) {
+      background: #9cbcf8;
+      & a {
+        color: $color-white-text;
+      }
+    }
+
+    & a {
+      text-decoration: none;
+      color: $color-black;
+    }
+
+    &:hover {
+      background: rgb(216, 248, 255);
+      ////opacity: .7;
+      //
+      //& a {
+      //  color: $color-white-text;
+      //}
+    }
+
+    &__icon {
+      margin-right: 10px;
+    }
+  }
+}

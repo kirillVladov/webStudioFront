@@ -7,8 +7,22 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: black;
+  //background: black;
   //opacity: 0.3;
+
+  &-enter-active,
+  &-leave-active {
+    animation-name: slide-modal;
+    animation-duration: .3s;
+    //transition: opacity 0.5s ease;
+  }
+
+  &-enter-from,
+  &-leave-to {
+    animation-direction: reverse;
+    animation-name: slide-modal;
+    animation-duration: .3s;
+  }
 
   &__content {
     padding: 24px;
@@ -32,5 +46,15 @@
         margin-left: 10px;
       }
     }
+  }
+}
+
+@keyframes slide-modal {
+  from {
+    left: -100vw;
+  }
+
+  to {
+    left: 0;
   }
 }

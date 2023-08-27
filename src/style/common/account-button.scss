@@ -1,0 +1,12 @@
+$imageSize: 36px;
+
+.account-button {
+
+  &-picture img {
+    max-width: $imageSize;
+    max-height: $imageSize;
+    min-width: $imageSize;
+    min-height: $imageSize;
+    border-radius: 50%;
+  }
+}

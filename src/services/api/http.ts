@@ -6,7 +6,7 @@ export class ApiClient {
   private readonly _instance: AxiosInstance;
 
   constructor() {
-    // this._baseUrl = import.meta.env.VITE_API_URL;
+    this._baseUrl = "http://localhost:8080";
     this._defaultHeaders = {
       Accept: "application/json",
       "Content-Type": "application/json",

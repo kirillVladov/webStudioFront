@@ -6,5 +6,9 @@
 
   &__list {
     margin-top: 50px;
+
+    & .slider__item:hover .slider__item-image {
+      box-shadow: 13px 11px 0 #6989fc;
+    }
   }
 }

@@ -1,0 +1,17 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 100px;
+  background: #9cbcf8;
+
+  &__rightside {
+    display: flex;
+    align-items: center;
+  }
+
+  &__account {
+    margin-top: 5px;
+    margin-right: 20px;
+  }
+}

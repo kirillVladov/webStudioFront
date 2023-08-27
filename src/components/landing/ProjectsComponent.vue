@@ -1,13 +1,26 @@
-<script setup>
+<script setup lang="ts">
 import SectionHeaderComponent from "../common/SectionHeaderComponent.vue";
 import ButtonsGroupComponent from "../common/ButtonsGroupComponent.vue";
 import ProjectsButtonGroup from "../../mocks/landing/ProjectsButtonGroup";
-import ProjectsListDEMO from "../../mocks/landing/ProjectsListDEMO";
 import WhiteRabbitFontComponent from "../common/WhiteRabbitFontComponent.vue";
+import {onBeforeMount, ref} from "vue";
+import {useProjectStore} from "../../stores/projects/index";
+import {Ref} from "vue";
+import PreloaderComponent from "../common/PreloaderComponent.vue";
+
+const projectStore = useProjectStore();
+const isShowPreload: Ref<boolean> = ref(true);
+onBeforeMount( () => {
+    projectStore.updateProjects("").then(() => {
+        setTimeout(() => {
+            isShowPreload.value = false
+        }, 3000)
+    })
+})
 </script>
 
 <template>
-  <div class="projects">
+  <div class="projects" id="projects">
       <div class="projects__header">
           <section-header-component>
               Projects that already made
@@ -16,10 +29,11 @@ import WhiteRabbitFontComponent from "../common/WhiteRabbitFontComponent.vue";
       <div class="projects__button-group">
           <buttons-group-component :list="ProjectsButtonGroup" />
       </div>
-      <div class="projects__list">
+      <preloader-component v-if="isShowPreload"/>
+      <div class="projects__list" v-else>
           <div
                class="projects__list__item"
-               v-for="(item, idx) in ProjectsListDEMO"
+               v-for="(item, idx) in projectStore.getProjectList"
                :key="`project-item-${idx}`"
           >
               <div class="projects__list__item__header">
@@ -30,7 +44,7 @@ import WhiteRabbitFontComponent from "../common/WhiteRabbitFontComponent.vue";
                           </white-rabbit-font-component>
                       </div>
                       <div class="projects__list__item__header-text__subheader">
-                          {{item.subHeader}}
+                          {{item.description}}
                       </div>
                   </div>
                   <div class="projects__list__item__header-year">

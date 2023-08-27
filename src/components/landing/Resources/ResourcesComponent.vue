@@ -6,7 +6,7 @@ import ResourcesItem from "./ResourcesItem.vue";
 </script>
 
 <template>
-  <div class="resources">
+  <div class="resources" id="resources">
     <div class="resources__info">
         <div class="resources__info-header">
             <section-header-component>

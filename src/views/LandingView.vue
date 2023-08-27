@@ -1,21 +1,19 @@
 <script setup>
-import FullScreenComponent from "../components/landing/fullScreenComponent.vue";
-import ProjectsComponent from "../components/landing/ProjectsComponent.vue";
-import BenefitsComponent from "../components/landing/BenefitsComponent.vue";
-import TeamComponent from "../components/landing/TeamComponent.vue";
-import ContactUsComponent from "../components/landing/ContactUsComponent.vue";
-import ResourcesComponent from "../components/landing/Resources/ResourcesComponent.vue";
-import ContactUsModalComponent from "../components/common/modals/ContactUsModalComponent.vue";
+import LandingStructure from "../mocks/landing/LandingStructure.ts";
+import MenuComponent from "../components/layout/LandingMenuComponent.vue";
+import ContactUsModalComponent from "@/components/common/modals/ContactUsModalComponent.vue";
+import LoginModalComponent from "@/components/common/modals/LoginModalComponent.vue";
 </script>
 
 <template>
-  <full-screen-component />
-  <projects-component />
-  <benefits-component />
-  <team-component />
-  <resources-component />
-  <contact-us-component />
+  <menu-component />
+  <component
+    v-for="item in LandingStructure"
+    :key="`landing-item-${item.name}`"
+    :is="item.component"
+  />
   <contact-us-modal-component />
+  <login-modal-component />
 </template>
 
 <style lang="scss">

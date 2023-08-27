@@ -14,3 +14,11 @@
     font-size: 20px;
   }
 }
+
+@media screen and (max-width: 950px) {
+  .contact-us{
+    &__description {
+      max-width: none;
+    }
+  }
+}

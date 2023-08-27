@@ -6,7 +6,7 @@ import WhiteRabbitFontComponent from "../common/WhiteRabbitFontComponent.vue";
 </script>
 
 <template>
-  <div class="benefits">
+  <div class="benefits" id="benefits">
       <div class="benefits__header">
           <section-header-component>
               Benefits

@@ -5,7 +5,7 @@ import TeamList from "../../mocks/landing/TeamList.ts";
 </script>
 
 <template>
-  <div class="team">
+  <div class="team" id="team">
       <div class="team__headline">
           <section-header-component>
               Meet the team

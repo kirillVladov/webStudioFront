@@ -1,0 +1,12 @@
+@import "@/style/variables";
+
+.profile {
+  background: $color-light-gray;
+  width: 100%;
+  padding: 40px 20px;
+
+  &-preview {
+    display: flex;
+    align-items: center;
+  }
+}

@@ -4,6 +4,7 @@
 @import "contact-us";
 @import "team";
 @import "resources";
+@import "../layout/landing-menu";
 
 .projects,
 .benefits,
@@ -12,4 +13,15 @@
 .resources,
 .team{
   padding: 50px 135px;
+}
+
+@media screen and (max-width: 950px) {
+  .projects,
+  .benefits,
+  .contact-us,
+  .landing__full-screen,
+  .resources,
+  .team{
+    padding: 50px 50px;
+  }
 }

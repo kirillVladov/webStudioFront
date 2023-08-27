@@ -2,7 +2,7 @@
 
 .landing__full-screen {
   height: calc(100vh - (50px * 2));
-  width: calc(100% - (135px * 2));
+  width: calc(100vw - (135px * 2));
   background: $full-screen-bg;
 
   &__header {
@@ -10,11 +10,20 @@
     align-items: center;
     justify-content: space-between;
     margin-bottom: 100px;
-    //
-    //& > * {
-    //  display: flex;
-    //  align-items: center;
-    //}
+
+    &__mobile-menu {
+      display: none;
+    }
+
+    &__rightside {
+      display: flex;
+      align-items: center;
+    }
+
+    &__account {
+      margin-top: 5px;
+      margin-right: 20px;
+    }
   }
 
   &__text {
@@ -47,5 +56,31 @@
     justify-content: center;
     margin-top: 50px;
   }
+}
 
+@media screen and (max-width: 950px) {
+  .landing__full-screen {
+    width: unset;
+    //height: 100vh;
+    //width: 100vw;
+
+    &__header {
+      &__socials{
+        display: none;
+      }
+
+      &__mobile-menu {
+        display: block;
+      }
+
+      &__mobile-menu svg path{
+        fill: $color-white-text;
+      }
+    }
+
+    &__headline {
+      font-size: 45px;
+      line-height: 32px;
+    }
+  }
 }

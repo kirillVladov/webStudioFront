@@ -1,3 +1,4 @@
 export default {
-    contactUs: false,
-}
+  contactUs: false,
+  loginModal: false,
+};
