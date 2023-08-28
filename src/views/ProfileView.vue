@@ -1,31 +1,27 @@
 <script lang="ts" setup>
-import { ref } from "vue";
-import UserImage from "../components/common/UserImage.vue";
+import { Ref, ref } from "vue";
+import ProfileHeaderComponent from "../components/profile/ProfileHeaderComponent.vue";
+import { Profile } from "../../types/common/user";
+import ProfileInfoComponent from "../components/profile/ProfileInfoComponent.vue";
 
-const tempUser = ref({
+const tempUser: Ref<Profile> = ref({
   name: "Test",
   surname: "Test",
-  phone_number: null,
-  avatar: "/src/assets/img/test_ladislav.jpg",
+  phoneNumber: "89438934",
+  avatar: "/src/assets/img/testImgProject.png",
   email: "test",
-  role: null,
+  role: "employer",
   userId: "648fe457e2ffca74033f49aa",
 });
 </script>
 
 <template>
   <div class="profile">
-    <div class="profile-preview">
-      <span class="profile-preview__avatar">
-        <user-image :picture="tempUser.avatar" />
-      </span>
-      <span class="profile-preview__name">
-        {{ `${tempUser.surname} ${tempUser.name}` }}
-      </span>
-    </div>
+    <profile-header-component :user="tempUser" />
+    <profile-info-component :user="tempUser" />
   </div>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import "@/style/profile";
 </style>

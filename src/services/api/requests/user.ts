@@ -19,3 +19,7 @@ export async function registration(
 ): Promise<Profile> {
   return await $http.post(`${base}/registration`, data);
 }
+
+export async function updateAllUsers(): Promise<Profile[]> {
+  return await $http.get(`${base}/getAllUser`);
+}

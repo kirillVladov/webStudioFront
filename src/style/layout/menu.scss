@@ -7,6 +7,10 @@
     padding: 15px 40px;
     transition: .3s;
 
+    &:not(:last-of-type) {
+      border-bottom: 1px solid $color-medium-gray;
+    }
+
     &:has(a.router-link-active) {
       background: #9cbcf8;
       & a {

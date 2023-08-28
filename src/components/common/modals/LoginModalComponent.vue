@@ -5,9 +5,10 @@ import LoginModel from "../../../mocks/landing/LoginModel";
 import RefgistrationModel from "../../../mocks/landing/RefgistrationModel";
 import ButtonComponent from "../ButtonComponent.vue";
 import { useRouter } from "vue-router";
+import { useModalStore } from "../../../stores/modal";
 
 const router = useRouter();
-
+const modalStore = useModalStore();
 const isLogin: Ref<boolean> = ref(true);
 const onSwitchType = () => {
   isLogin.value = !isLogin.value;
@@ -18,6 +19,8 @@ const modelComputed: ComputedRef<any> = computed(() =>
 );
 
 const onSubmit = () => {
+  modalStore.hideModal("loginModal");
+
   if (isLogin.value) {
     router.push({ name: "profile" });
     return;

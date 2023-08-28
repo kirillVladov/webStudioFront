@@ -4,6 +4,11 @@ export interface AuthRequest {
   password: string;
 }
 
+// export type UserInfo = {
+//   price?: number;
+//   experience?: string;
+// };
+
 export interface RegistrationRequest extends AuthRequest {
   role: UserRole;
   surname: string;
@@ -11,6 +16,13 @@ export interface RegistrationRequest extends AuthRequest {
   phoneNumber: string;
 }
 
-export interface Profile extends RegistrationRequest {
+export interface Profile {
   userId: string;
+  avatar: string;
+  surname: string;
+  name: string;
+  phoneNumber: string;
+  role: UserRole;
+  // info?: UserInfo;
+  email: string;
 }

@@ -9,6 +9,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: 'Urbanist', sans-serif;
+  background: $color-light-gray;
 }
 
 a {
@@ -18,10 +19,6 @@ a {
 #app {
   position: relative;
   min-height: 100%;
-}
-
-.content {
-  padding-bottom: 390px;
 }
 
 .white-rabbit {
@@ -43,6 +40,7 @@ a {
 }
 
 .content {
+  min-height: 80vh;
   padding-bottom: 390px !important;
 
   &:not(.landing) {

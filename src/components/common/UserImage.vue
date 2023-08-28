@@ -23,12 +23,13 @@ $imageSize: 100px;
 .user-image {
   max-width: $imageSize;
   min-width: $imageSize;
-  aspect-ratio: 1/1;
+  max-height: 100px;
   background: $color-light-gray;
   border-radius: 50%;
   overflow: hidden;
 
   & img {
+    aspect-ratio: 1/1;
     max-width: 100%;
     max-height: 100%;
   }
