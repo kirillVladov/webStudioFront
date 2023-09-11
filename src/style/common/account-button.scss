@@ -1,6 +1,7 @@
 $imageSize: 36px;
 
 .account-button {
+  position: relative;
 
   &-picture img {
     max-width: $imageSize;

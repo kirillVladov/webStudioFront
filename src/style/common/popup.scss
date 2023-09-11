@@ -1,0 +1,17 @@
+.popup {
+  position: absolute;
+  top: 20px;
+  left: -15px;
+  background: #FFFFFF;
+
+  &__item {
+    padding: 10px;
+    border-bottom: 1px solid #bbbbbb;
+
+    &:hover {
+      transition: .3s;
+      background: #5683D9;
+      color: #FFFFFF;
+    }
+  }
+}

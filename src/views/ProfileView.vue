@@ -3,22 +3,15 @@ import { Ref, ref } from "vue";
 import ProfileHeaderComponent from "../components/profile/ProfileHeaderComponent.vue";
 import { Profile } from "../../types/common/user";
 import ProfileInfoComponent from "../components/profile/ProfileInfoComponent.vue";
+import { useUserStroe } from "../stores/user";
 
-const tempUser: Ref<Profile> = ref({
-  name: "Test",
-  surname: "Test",
-  phoneNumber: "89438934",
-  avatar: "/src/assets/img/testImgProject.png",
-  email: "test",
-  role: "employer",
-  userId: "648fe457e2ffca74033f49aa",
-});
+const userStore = useUserStroe();
 </script>
 
 <template>
   <div class="profile">
-    <profile-header-component :user="tempUser" />
-    <profile-info-component :user="tempUser" />
+    <profile-header-component :user="userStore.profile" />
+    <profile-info-component :user="userStore.profile" />
   </div>
 </template>
 

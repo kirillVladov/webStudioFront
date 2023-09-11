@@ -1,1 +1,1 @@
-export type ModalState = "contactUs" | "loginModal";
+export type ModalState = "contactUs" | "loginModal" | "addTask";

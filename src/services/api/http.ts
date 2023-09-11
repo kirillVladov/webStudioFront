@@ -1,4 +1,6 @@
 import axios, { type AxiosInstance, type AxiosResponse } from "axios";
+import { useUserStroe } from "../../stores/user";
+import store from "@/stores/index.ts";
 
 export class ApiClient {
   private readonly _baseUrl: string;
@@ -26,15 +28,14 @@ export class ApiClient {
   _init() {
     this._instance.interceptors.request.use(
       function (config) {
-        // const userStore = useUserStore(store);
-        // const teacherToken: string | null = userStore.getTeacherToken;
-        // const studentToken: string | null = userStore.getStudentToken;
-        //
-        // if (teacherToken ?? studentToken) {
-        //   config.headers = {
-        //     Authorization: `Bearer ${teacherToken ?? studentToken}`,
-        //   };
-        // }
+        const userStore = useUserStroe(store);
+        const token: string = userStore.getToken;
+
+        if (token.length) {
+          config.headers = {
+            Authorization: token,
+          };
+        }
 
         return config;
       },

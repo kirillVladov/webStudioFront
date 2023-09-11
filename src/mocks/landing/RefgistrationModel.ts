@@ -24,7 +24,7 @@ export default computed(() => [
   },
   {
     name: "Phone number",
-    key: "phone_number",
+    key: "phoneNumber",
     component: InputFieldComponent,
   },
   {

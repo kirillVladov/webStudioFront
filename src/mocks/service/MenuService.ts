@@ -12,6 +12,11 @@ export default computed(() => [
     icon: null,
   },
   {
+    name: "projects",
+    value: "projects",
+    icon: null,
+  },
+  {
     name: "peoples",
     value: "peoples",
     icon: null,

@@ -1,7 +1,7 @@
-import {Component} from "vue";
+import { Component } from "vue";
 
-export type DropdownList = {
-    value: string | number;
-    name: string;
-    icon?: Component;
-}
+export type ModelList = {
+  value: string | number;
+  name: string;
+  icon?: Component;
+};

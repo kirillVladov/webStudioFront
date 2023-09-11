@@ -6,27 +6,61 @@ import RefgistrationModel from "../../../mocks/landing/RefgistrationModel";
 import ButtonComponent from "../ButtonComponent.vue";
 import { useRouter } from "vue-router";
 import { useModalStore } from "../../../stores/modal";
+import { useUserStroe } from "../../../stores/user";
+import {
+  AuthRequest,
+  RegistrationRequest,
+} from "../../../../types/common/user";
 
 const router = useRouter();
 const modalStore = useModalStore();
+const userStore = useUserStroe();
 const isLogin: Ref<boolean> = ref(true);
+
+const model: Ref<AuthRequest | RegistrationRequest> = ref({
+  email: "",
+  password: "",
+});
+
 const onSwitchType = () => {
   isLogin.value = !isLogin.value;
+
+  let newModel: RegistrationRequest | AuthRequest = {
+    email: "",
+    password: "",
+  };
+
+  if (!isLogin.value) {
+    newModel = {
+      ...newModel,
+      role: "employer",
+      surname: "",
+      name: "",
+      phoneNumber: "",
+    };
+  }
+
+  model.value = newModel;
 };
 
 const modelComputed: ComputedRef<any> = computed(() =>
   isLogin.value ? LoginModel.value : RefgistrationModel.value
 );
 
-const onSubmit = () => {
-  modalStore.hideModal("loginModal");
-
-  if (isLogin.value) {
+const redirectToCabinet = (isAuth: boolean) => {
+  if (isAuth) {
     router.push({ name: "profile" });
-    return;
   }
+};
 
-  console.log("submit");
+const onSubmit = async () => {
+  redirectToCabinet(
+    isLogin.value
+      ? await userStore.auth(model.value)
+      : await userStore.registration(model.value as RegistrationRequest)
+  );
+
+  modalStore.hideModal("loginModal");
 };
 </script>
 
@@ -46,6 +80,7 @@ const onSubmit = () => {
       </div>
       <div :class="`login-modal-field-${item.key}-field`">
         <component
+          v-model="model[item.key]"
           :list="
             item.component.__name === 'DropdownComponent' ? item?.list : []
           "

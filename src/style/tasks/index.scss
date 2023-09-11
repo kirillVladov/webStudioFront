@@ -1,0 +1,62 @@
+.tasks {
+  width: 100%;
+  background: #FFFFFF;
+  box-shadow: 11px 12px 22px 0 rgba(62, 128, 255, 0.18);
+
+  &__add {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background: #9cbcf8;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+  }
+
+  &-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    transition: .3s;
+    border-bottom: 1px solid #f9fafb;
+
+    &__action {
+      display: flex;
+      gap: 10px;
+    }
+
+    &__open svg {
+      transform: rotate(-90deg);
+
+      & > path {
+        fill: #9cbcf8;
+      }
+    }
+
+    &:hover {
+      box-shadow: 11px 12px 22px 0 rgba(62, 128, 255, 0.18);
+    }
+
+    &:not(:last-of-type) {
+      border-bottom: 1px solid #bbbbbb;
+    }
+
+    &__avatar {
+      $imageSize: 70px;
+
+      max-height: $imageSize;
+      max-width: $imageSize;
+
+      & img {
+        border-radius: 50%;
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    &__username {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+  }
+}

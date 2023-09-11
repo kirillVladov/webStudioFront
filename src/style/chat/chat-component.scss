@@ -1,0 +1,9 @@
+@import "./chat-messages";
+@import "./chat-rooms";
+@import "./chat-message-item";
+
+.chat-component {
+  display: flex;
+  background: #FFFFFF;
+  max-height: 80vh;
+}

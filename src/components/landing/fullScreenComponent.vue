@@ -6,15 +6,48 @@ import ButtonComponent from "../common/ButtonComponent.vue";
 import WhiteRabbitFontComponent from "../common/WhiteRabbitFontComponent.vue";
 import { useModalStore } from "../../stores/modal";
 import { computed, onMounted, onUnmounted, ref } from "vue";
-import SvgTrippleLine from "../../assets/svg/common/SvgTrippleLine.vue";
-import SvgUser from "../../assets/svg/SvgUser.vue";
 import AccountButtonComponent from "../common/AccountButtonComponent.vue";
+import { useUserStroe } from "../../stores/user";
+import { useRouter } from "vue-router";
+import { ModelList } from "../../../types/common/Dropdown";
+//@TODo
+const tempMenuLogginedList = [
+  {
+    name: "Profile",
+    value: "profile",
+  },
+  {
+    name: "Logout",
+    value: "logout",
+  },
+];
 
-const modalStore = useModalStore();
-const onClickOpenModal = () => {
-  modalStore.showModal("contactUs");
+const tempMenuNotLogginedList = [
+  {
+    name: "Login",
+    value: "login",
+  },
+];
+
+const userLoginActionHandler = (action: ModelList) => {
+  switch (action.value) {
+    case "logout":
+      userStore.logOut();
+      break;
+    case "login":
+      modalStore.showModal("loginModal");
+      break;
+    default:
+      router.push({ name: action.value as string });
+      break;
+  }
 };
-
+const modalStore = useModalStore();
+const userStore = useUserStroe();
+const router = useRouter();
+const menuList = computed(() =>
+  userStore.getProfile ? tempMenuLogginedList : tempMenuNotLogginedList
+);
 const windowWidth = ref(window.innerWidth);
 
 onMounted(() => window.addEventListener("resize", handleResize));
@@ -23,8 +56,8 @@ onUnmounted(() => window.removeEventListener("resize", handleResize));
 const handleResize = () => {
   windowWidth.value = window.innerWidth;
 };
-const onAccountLogin = () => {
-  modalStore.showModal("loginModal");
+const onClickOpenModal = () => {
+  modalStore.showModal("contactUs");
 };
 </script>
 
@@ -38,12 +71,12 @@ const onAccountLogin = () => {
         <SocialsListComponent />
       </span>
       <div class="landing__full-screen__header__rightside">
-        <span
-          class="landing__full-screen__header__account"
-          @click="onAccountLogin"
-        >
+        <span class="landing__full-screen__header__account">
           <account-button-component
-            picture="/src/assets/img/test_ladislav.jpg"
+            use-menu
+            :picture="userStore.getProfile?.avatar"
+            :menu-list="menuList"
+            @menu-select="userLoginActionHandler"
           />
         </span>
         <span class="landing__full-screen__header__lang">

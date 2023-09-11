@@ -28,5 +28,36 @@
 
   &-info {
     margin-top: 20px;
+
+    &__header {
+      display: block;
+      margin-bottom: 40px;
+    }
+
+    &__fields {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(calc(33% - 20px), 1fr));
+      gap: 20px;
+      margin-bottom: 50px;
+
+      & input,
+      & .dropdown{
+        background: #f9fafb;
+      }
+
+      & .dropdown {
+        max-width: 181px;
+      }
+    }
+
+    &__field input{
+      font-size: 16px;
+    }
+
+    &__submit {
+      display: flex;
+      justify-content: center;
+      //margin-top: 50px;
+    }
   }
 }

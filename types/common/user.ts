@@ -21,8 +21,14 @@ export interface Profile {
   avatar: string;
   surname: string;
   name: string;
+  token: string;
   phoneNumber: string;
   role: UserRole;
   // info?: UserInfo;
   email: string;
+}
+
+export interface ChangePasswordRequest {
+  oldPassword: string;
+  password: string;
 }

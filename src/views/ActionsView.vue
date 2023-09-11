@@ -14,7 +14,7 @@ const TEMPactions = [
     name: "ProjectCompanyName",
     status: ActionStatus.declined,
     description:
-      "ProjectCompanyNameDESCRIPTIONProjectCompanyNameDESCRIPTIONProjectCompanyNameDESCRIPTIONProjectCompanyNameDESCRIPTION",
+      "ProjectCompanyN ameDESCRIPTIONProj ectCompanyNameDESCRIPTIONProjec tCompanyNameDESCRIPTIO NProjectCompanyNameDESCRIPTION",
     date: "29-20-2023",
   },
   {
@@ -22,7 +22,7 @@ const TEMPactions = [
     name: "ProjectCompanyName",
     status: ActionStatus.declined,
     description:
-      "ProjectCompanyNameDESCRIPTIONProjectCompanyNameDESCRIPTIONProjectCompanyNameDESCRIPTIONProjectCompanyNameDESCRIPTION",
+      "ProjectCompanyN ameDESCRIPTIONProj ectCompanyNameDESCRIPTIONProjec tCompanyNameDESCRIPTIO NProjectCompanyNameDESCRIPTION",
     date: "29-20-2023",
   },
   {
@@ -30,7 +30,7 @@ const TEMPactions = [
     name: "ProjectCompanyName",
     status: ActionStatus.declined,
     description:
-      "ProjectCompanyNameDESCRIPTIONProjectCompanyNameDESCRIPTIONProjectCompanyNameDESCRIPTIONProjectCompanyNameDESCRIPTION",
+      "ProjectCompanyN ameDESCRIPTIONProj ectCompanyNameDESCRIPTIONProjec tCompanyNameDESCRIPTIO NProjectCompanyNameDESCRIPTION",
     date: "29-20-2023",
   },
   {
@@ -38,7 +38,23 @@ const TEMPactions = [
     name: "ProjectCompanyName",
     status: ActionStatus.declined,
     description:
-      "ProjectCompanyNameDESCRIPTIONProjectCompanyNameDESCRIPTIONProjectCompanyNameDESCRIPTIONProjectCompanyNameDESCRIPTION",
+      "ProjectCompanyN ameDESCRIPTIONProj ectCompanyNameDESCRIPTIONProjec tCompanyNameDESCRIPTIO NProjectCompanyNameDESCRIPTION",
+    date: "29-20-2023",
+  },
+  {
+    id: 1,
+    name: "ProjectCompanyName",
+    status: ActionStatus.allowed,
+    description:
+      "ProjectCompanyN ameDESCRIPTIONProj ectCompanyNameDESCRIPTIONProjec tCompanyNameDESCRIPTIO NProjectCompanyNameDESCRIPTION",
+    date: "29-20-2023",
+  },
+  {
+    id: 1,
+    name: "ProjectCompanyName",
+    status: ActionStatus.awaiting,
+    description:
+      "ProjectCompanyN ameDESCRIPTIONProj ectCompanyNameDESCRIPTIONProjec tCompanyNameDESCRIPTIO NProjectCompanyNameDESCRIPTION",
     date: "29-20-2023",
   },
   {
@@ -46,7 +62,7 @@ const TEMPactions = [
     name: "ProjectCompanyName",
     status: ActionStatus.declined,
     description:
-      "ProjectCompanyNameDESCRIPTIONProjectCompanyNameDESCRIPTIONProjectCompanyNameDESCRIPTIONProjectCompanyNameDESCRIPTION",
+      "ProjectCompanyN ameDESCRIPTIONProj ectCompanyNameDESCRIPTIONProjec tCompanyNameDESCRIPTIO NProjectCompanyNameDESCRIPTION",
     date: "29-20-2023",
   },
   {
@@ -54,23 +70,7 @@ const TEMPactions = [
     name: "ProjectCompanyName",
     status: ActionStatus.declined,
     description:
-      "ProjectCompanyNameDESCRIPTIONProjectCompanyNameDESCRIPTIONProjectCompanyNameDESCRIPTIONProjectCompanyNameDESCRIPTION",
-    date: "29-20-2023",
-  },
-  {
-    id: 1,
-    name: "ProjectCompanyName",
-    status: ActionStatus.declined,
-    description:
-      "ProjectCompanyNameDESCRIPTIONProjectCompanyNameDESCRIPTIONProjectCompanyNameDESCRIPTIONProjectCompanyNameDESCRIPTION",
-    date: "29-20-2023",
-  },
-  {
-    id: 1,
-    name: "ProjectCompanyName",
-    status: ActionStatus.declined,
-    description:
-      "ProjectCompanyNameDESCRIPTIONProjectCompanyNameDESCRIPTIONProjectCompanyNameDESCRIPTIONProjectCompanyNameDESCRIPTION",
+      "ProjectCompanyN ameDESCRIPTIONProj ectCompanyNameDESCRIPTIONProjec tCompanyNameDESCRIPTIO NProjectCompanyNameDESCRIPTION",
     date: "29-20-2023",
   },
 ];

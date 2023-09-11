@@ -4,6 +4,7 @@ import TasksView from "../views/TasksView.vue";
 import PeoplesView from "../views/PeoplesView.vue";
 import ChatView from "../views/ChatView.vue";
 import ActionsView from "../views/ActionsView.vue";
+import ProjectsView from "../views/ProjectsView.vue";
 
 export default [
   {
@@ -15,6 +16,11 @@ export default [
     path: "/profile",
     name: "profile",
     component: ProfileView,
+  },
+  {
+    path: "/projects",
+    name: "projects",
+    component: ProjectsView,
   },
   {
     path: "/tasks",

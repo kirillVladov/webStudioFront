@@ -1,13 +1,22 @@
 <script setup>
-import LandingView from "./views/LandingView.vue";
 import FooterComponent from "./components/layout/FooterComponent.vue";
 import HeaderComponent from "@/components/layout/HeaderComponent.vue";
 import MenuComopnent from "@/components/layout/MenuComopnent.vue";
-import { computed } from "vue";
+import { computed, onBeforeMount } from "vue";
 import { useRoute } from "vue-router";
+import { useUserStroe } from "@/stores/user";
 
 const route = useRoute();
+const userStore = useUserStroe();
 const isRouteLanding = computed(() => route.path === "/");
+
+const init = async () => {
+  if (userStore.getProfile) {
+    await userStore.updateProfile();
+  }
+};
+
+onBeforeMount(() => init());
 </script>
 
 <template>
