@@ -22,7 +22,7 @@ const taskItem: Ref<Task> = toRef(props, "taskItem");
         {{ taskItem?.priority }}
       </div>
       <div class="tasks-item__username">
-        {{ taskItem.user.surname }} {{ taskItem.user.name }}
+        {{ taskItem.user?.surname }} {{ taskItem.user?.name }}
       </div>
     </div>
     <div class="tasks-item__info">
@@ -49,9 +49,9 @@ const taskItem: Ref<Task> = toRef(props, "taskItem");
       <div class="tasks-item__delete pointer">
         <svg-delete />
       </div>
-      <div class="tasks-item__open pointer">
-        <svg-arrow-down />
-      </div>
+      <!--      <div class="tasks-item__open pointer">-->
+      <!--        <svg-arrow-down />-->
+      <!--      </div>-->
     </div>
   </div>
 </template>

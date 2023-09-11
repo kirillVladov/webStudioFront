@@ -74,12 +74,29 @@ const TEMPactions = [
     date: "29-20-2023",
   },
 ];
+
+const onOpenTask = (id: string) => {
+  console.log(`${id} onOpenTask`);
+};
+
+const onStartChatAction = (id: string) => {
+  console.log(`${id} onStartChat`);
+};
+
+const onDeleteAction = (id: string) => {
+  console.log(`${id} onDelete`);
+};
 </script>
 
 <template>
   <div class="actions">
     <actions-header @select="onFilter" />
-    <actions-list-component :list="TEMPactions" />
+    <actions-list-component
+      :list="TEMPactions"
+      @open-task="onOpenTask"
+      @start-chat="onStartChatAction"
+      @delete="onDeleteAction"
+    />
   </div>
 </template>
 

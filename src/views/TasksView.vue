@@ -51,6 +51,7 @@ const onAddTask = () => {
 <template>
   <div class="tasks">
     <div class="tasks__add pointer" @click="onAddTask">+ add task</div>
+    <div class="tasks__header"></div>
     <div class="tasks__list">
       <tasks-item-component
         :task-item="task"

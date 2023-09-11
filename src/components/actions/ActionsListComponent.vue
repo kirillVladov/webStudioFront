@@ -2,6 +2,7 @@
 import SvgDelete from "../../assets/svg/common/SvgDelete.vue";
 import SvgMessage from "../../assets/svg/chat/SvgMessage.vue";
 import { ActionStatus } from "../../../types/actions";
+import WhiteRabbitFontComponent from "../common/WhiteRabbitFontComponent.vue";
 
 defineProps({
   list: {
@@ -9,6 +10,8 @@ defineProps({
     required: true,
   },
 });
+
+const emit = defineEmits(["openTask", "startChat", "delete"]);
 
 enum ActionStatusColorType {
   declined = "red",
@@ -22,33 +25,44 @@ const getStatusColor = (color: ActionStatus): ActionStatusColorType => {
 
 <template>
   <div class="actions-list">
+    <div class="actions-list__header">
+      <div>status</div>
+      <div></div>
+      <div>date</div>
+    </div>
     <div
-      class="actions-list__item"
+      class="actions-list__item pointer"
       v-for="action in list"
       :key="`action-item-${action.id}`"
+      @click="emit('openTask', action.id)"
     >
       <div
-        class="actions-list__item--status"
-        :style="{ color: getStatusColor(action.status) }"
-      >
-        {{ action.status }}
-      </div>
+        class="actions-list__item--status pointer"
+        v-tooltip="action.status"
+        :style="{ background: getStatusColor(action.status) }"
+      ></div>
       <div class="actions-list__item--contact">
-        <div class="actions-list__item--name">
+        <white-rabbit-font-component class="actions-list__item--name">
           {{ action.name }}
-        </div>
+        </white-rabbit-font-component>
         <div class="actions-list__item--description">
           {{ action.description }}
         </div>
       </div>
-      <div class="actions-list__item--date">
+      <white-rabbit-font-component class="actions-list__item--date">
         {{ action.date }}
-      </div>
+      </white-rabbit-font-component>
       <div class="actions-list__item--controllers">
-        <span class="actions-list__item--message pointer">
+        <span
+          class="actions-list__item--message pointer"
+          @click.prevent.stop="emit('startChat', action.id)"
+        >
           <svg-message />
         </span>
-        <span class="actions-list__item--delete pointer">
+        <span
+          class="actions-list__item--delete pointer"
+          @click.prevent.stop="emit('delete', action.id)"
+        >
           <svg-delete />
         </span>
       </div>
