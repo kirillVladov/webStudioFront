@@ -5,6 +5,9 @@ import PeoplesView from "../views/PeoplesView.vue";
 import ChatView from "../views/ChatView.vue";
 import ActionsView from "../views/ActionsView.vue";
 import ProjectsView from "../views/ProjectsView.vue";
+import TaskDetail from "../views/TaskDetail.vue";
+import ProjectDetail from "../views/ProjectDetail.vue";
+import PeopleDetail from "../views/PeopleDetail.vue";
 
 export default [
   {
@@ -21,16 +24,21 @@ export default [
     path: "/projects",
     name: "projects",
     component: ProjectsView,
+    children: [
+      { name: "project-detail", path: ":id", component: ProjectDetail },
+    ],
   },
   {
     path: "/tasks",
     name: "tasks",
     component: TasksView,
+    children: [{ name: "task-detail", path: ":id", component: TaskDetail }],
   },
   {
     path: "/peoples",
     name: "peoples",
     component: PeoplesView,
+    children: [{ name: "people-detail", path: ":id", component: PeopleDetail }],
   },
   {
     path: "/chat",

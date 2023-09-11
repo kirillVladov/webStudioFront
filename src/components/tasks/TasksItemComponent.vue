@@ -12,11 +12,12 @@ const props = defineProps({
     required: true,
   },
 });
+const emit = defineEmits(["openTask", "edit", "delete"]);
 const taskItem: Ref<Task> = toRef(props, "taskItem");
 </script>
 
 <template>
-  <div class="tasks-item pointer">
+  <div class="tasks-item pointer" @click="emit('openTask', taskItem.taskId)">
     <div class="tasks-item__user">
       <div class="tasks-item__priority">
         {{ taskItem?.priority }}
@@ -43,10 +44,16 @@ const taskItem: Ref<Task> = toRef(props, "taskItem");
       {{ taskItem.price }} {{ prepareCurrencyToSymbol(taskItem.currency) }}
     </div>
     <div class="tasks-item__action">
-      <div class="tasks-item__edit pointer">
+      <div
+        class="tasks-item__edit pointer"
+        @click.prevent.stop="emit('edit', taskItem.taskId)"
+      >
         <svg-edit />
       </div>
-      <div class="tasks-item__delete pointer">
+      <div
+        class="tasks-item__delete pointer"
+        @click.prevent.stop="emit('delete', taskItem.taskId)"
+      >
         <svg-delete />
       </div>
       <!--      <div class="tasks-item__open pointer">-->

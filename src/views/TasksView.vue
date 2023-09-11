@@ -4,40 +4,12 @@ import { useModalStore } from "../stores/modal";
 import AddTaskModalComponent from "../components/common/modals/AddTaskModalComponent.vue";
 import { useTasksStore } from "../stores/tasks";
 import { onBeforeMount } from "vue";
+import { useRouter } from "vue-router";
 
 const taskStore = useTasksStore();
-
-// const testTasks = [
-//   {
-//     id: 1,
-//     avatar: "/src/assets/img/test_ladislav.jpg",
-//     userName: "test",
-//     startAt: "49.43.4343",
-//     expiresAt: "49.43.4343",
-//     header: "test task",
-//     description: "test taskifslfjoweijfoeiwjfoeiwj",
-//   },
-//   {
-//     id: 2,
-//     avatar: "/src/assets/img/test_ladislav.jpg",
-//     userName: "test",
-//     startAt: "49.43.4343",
-//     expiresAt: "49.43.4343",
-//     header: "test task",
-//     description: "test taskifslfjoweijfoeiwjfoeiwj",
-//   },
-//   {
-//     id: 3,
-//     avatar: "/src/assets/img/test_ladislav.jpg",
-//     userName: "test",
-//     startAt: "49.43.4343",
-//     expiresAt: "49.43.4343",
-//     header: "test task",
-//     description: "test taskifslfjoweijfoeiwjfoeiwj",
-//   },
-// ];
-
 const modalStore = useModalStore();
+
+const router = useRouter();
 
 onBeforeMount(() => {
   taskStore.updateTaskList();
@@ -45,6 +17,18 @@ onBeforeMount(() => {
 
 const onAddTask = () => {
   modalStore.showModal("addTask");
+};
+
+const onDelete = (id: string) => {
+  console.log(id + " deleted");
+};
+
+const onOpenTask = (id: string) => {
+  router.push({ name: "task-detail", params: { id } });
+};
+
+const onEditTask = (id: string) => {
+  console.log(id + " deleted");
 };
 </script>
 
@@ -57,6 +41,9 @@ const onAddTask = () => {
         :task-item="task"
         v-for="task in taskStore.getTaskList"
         :key="`task-item-${task.id}`"
+        @open-task="onOpenTask"
+        @edit="onEditTask"
+        @delete="onDelete"
       />
     </div>
   </div>
