@@ -3,6 +3,14 @@ import ActionsHeader from "../components/actions/ActionsHeaderComponent.vue";
 import { ActionStatus, ActionTab } from "../../types/actions";
 import ActionsListComponent from "../components/actions/ActionsListComponent.vue";
 import teamList from "../mocks/landing/TeamList";
+import { onMounted } from "vue";
+import { useActionStore } from "../stores/actions";
+
+const actionsStore = useActionStore();
+
+onMounted(() => {
+  actionsStore.updateActionsList();
+});
 
 const onFilter = (action: ActionTab) => {
   console.log(action);
