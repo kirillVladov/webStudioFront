@@ -3,16 +3,17 @@ import TasksItemComponent from "../components/tasks/TasksItemComponent.vue";
 import { useModalStore } from "../stores/modal";
 import AddTaskModalComponent from "../components/common/modals/AddTaskModalComponent.vue";
 import { useTasksStore } from "../stores/tasks";
-import { onBeforeMount } from "vue";
+import { onBeforeMount, ref } from "vue";
 import { useRouter } from "vue-router";
 
 const taskStore = useTasksStore();
 const modalStore = useModalStore();
-
 const router = useRouter();
 
+const currentPage = ref(1);
+
 onBeforeMount(() => {
-  taskStore.updateTaskList();
+  taskStore.updateTaskList(currentPage.value);
 });
 
 const onAddTask = () => {
@@ -20,7 +21,7 @@ const onAddTask = () => {
 };
 
 const onDelete = (id: string) => {
-  console.log(id + " deleted");
+  taskStore.deleteTask(id);
 };
 
 const onOpenTask = (id: string) => {

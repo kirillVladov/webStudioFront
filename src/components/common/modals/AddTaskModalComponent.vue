@@ -16,7 +16,7 @@ const modalStore = useModalStore();
 
 const model: Ref<AddTaskRequest> = ref({
   header: "",
-  tags: "",
+  tags: [""],
   description: "",
   price: 0,
   priority: "low",

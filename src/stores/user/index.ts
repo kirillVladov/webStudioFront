@@ -65,6 +65,7 @@ export const useUserStroe = defineStore("user-store", {
         this.users = response;
       });
     },
+    async updateWorkers() {},
   },
   getters: {
     getProfile: (state): Profile | null => state.profile,

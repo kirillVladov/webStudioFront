@@ -21,11 +21,11 @@ export default computed(() => [
     value: "peoples",
     icon: null,
   },
-  {
-    name: "chat",
-    value: "chat",
-    icon: null,
-  },
+  // {
+  //   name: "chat",
+  //   value: "chat",
+  //   icon: null,
+  // },
   {
     name: "actions",
     value: "actions",
