@@ -11,6 +11,13 @@ export enum CurrencySymbol {
   rub = "₽",
 }
 
+export interface TaskResponse {
+  data: Task[];
+  currentPage: number;
+  lastPage: number;
+  totalItems: number;
+}
+
 export interface Task extends AddTaskRequest {
   userId: string;
   taskId: string;
@@ -20,7 +27,7 @@ export interface Task extends AddTaskRequest {
 export interface AddTaskRequest {
   header: string;
   price: number;
-  tags: string;
+  tags: string[];
   description: string;
   currency: Currency;
   startAt: string;
