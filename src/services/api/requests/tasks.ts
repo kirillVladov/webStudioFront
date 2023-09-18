@@ -14,3 +14,7 @@ export async function updateTasksList(page: number): Promise<TaskResponse> {
 export async function deleteTask(id: string): Promise<SuccessResponse> {
   return await $http.delete(`${base}/${id}`);
 }
+
+export async function updateTask(id: string): Promise<Task> {
+  return await $http.get(`${base}/${id}`);
+}

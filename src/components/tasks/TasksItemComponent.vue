@@ -5,6 +5,8 @@ import SvgEdit from "../../assets/svg/common/SvgEdit.vue";
 import SvgDelete from "../../assets/svg/common/SvgDelete.vue";
 import SvgArrowDown from "../../assets/svg/common/SvgArrowDown.vue";
 import { prepareCurrencyToSymbol } from "../../services/common";
+import ButtonComponent from "../common/ButtonComponent.vue";
+import SvgFire from "../../assets/svg/tasks/SvgFire.vue";
 
 const props = defineProps({
   taskItem: {
@@ -18,31 +20,26 @@ const taskItem: Ref<Task> = toRef(props, "taskItem");
 
 <template>
   <div class="tasks-item pointer" @click="emit('openTask', taskItem.taskId)">
-    <div class="tasks-item__user">
-      <div class="tasks-item__priority">
-        {{ taskItem?.priority }}
-      </div>
-      <div class="tasks-item__username">
-        {{ taskItem.user?.surname }} {{ taskItem.user?.name }}
-      </div>
-    </div>
     <div class="tasks-item__info">
       <div class="tasks-item__header">
-        {{ taskItem.header }}
+        <span class="tasks-item__name">
+          {{ taskItem.header }}
+        </span>
+        <span
+          class="tasks-item__fire"
+          v-if="taskItem.priority === 'medium' || taskItem.priority === 'high'"
+        >
+          <svg-fire :color="taskItem.priority === 'high' ? 'red' : 'yellow'" />
+        </span>
       </div>
-      <div class="tasks-item__header">
-        {{ taskItem.description }}
+      <div class="tasks-item__price">
+        {{ taskItem.price }} {{ prepareCurrencyToSymbol(taskItem.currency) }}
       </div>
+      <span class="tasks-item__date">
+        {{ taskItem.startAt }} - {{ taskItem.startAt }}
+      </span>
     </div>
-    <div class="tasks-item__start">
-      {{ taskItem.startAt }}
-    </div>
-    <div class="tasks-item__start">
-      {{ taskItem.startAt }}
-    </div>
-    <div class="tasks-item__price">
-      {{ taskItem.price }} {{ prepareCurrencyToSymbol(taskItem.currency) }}
-    </div>
+
     <div class="tasks-item__action">
       <div
         class="tasks-item__edit pointer"
@@ -56,9 +53,9 @@ const taskItem: Ref<Task> = toRef(props, "taskItem");
       >
         <svg-delete />
       </div>
-      <!--      <div class="tasks-item__open pointer">-->
-      <!--        <svg-arrow-down />-->
-      <!--      </div>-->
+      <div class="tasks-item__response">
+        <button-component class-purple title="Откликнуться" />
+      </div>
     </div>
   </div>
 </template>
