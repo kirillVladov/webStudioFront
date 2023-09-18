@@ -5,9 +5,13 @@ import { useRouter } from "vue-router";
 import LangComponent from "../common/LangComponent.vue";
 import { ModelList } from "../../../types/common/Dropdown";
 import { useUserStroe } from "../../stores/user";
+import SvgMoon from "../../assets/svg/common/SvgMoon.vue";
+import { useSettingsStore } from "../../stores/settings";
+import SvgSun from "../../assets/svg/common/SvgSun.vue";
 
 const router = useRouter();
 const userStore = useUserStroe();
+const settingsStore = useSettingsStore();
 const redirectToLanding = () => {
   router.push({ name: "landing" });
 };
@@ -16,6 +20,10 @@ const onMenuSelect = (action: ModelList) => {
   if (action.value === "logout") {
     userStore.logOut();
   }
+};
+
+const onChangeTheme = () => {
+  settingsStore.switchTheme();
 };
 </script>
 
@@ -32,6 +40,10 @@ const onMenuSelect = (action: ModelList) => {
           :menu-list="[{ name: 'LogOut', value: 'logout' }]"
           @menu-select="onMenuSelect"
         />
+      </span>
+      <span class="header__theme pointer" @click="onChangeTheme">
+        <svg-sun v-if="settingsStore.theme === 'dark'" />
+        <svg-moon v-else />
       </span>
       <span class="header__lang">
         <lang-component />
