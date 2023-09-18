@@ -4,6 +4,7 @@ import {
   ChangePasswordRequest,
   Profile,
   RegistrationRequest,
+  UserRole,
 } from "../../../types/common/user";
 import api from "../../services/api/api";
 import { useRouter } from "vue-router";
@@ -69,6 +70,7 @@ export const useUserStroe = defineStore("user-store", {
   },
   getters: {
     getProfile: (state): Profile | null => state.profile,
+    getUserRole: (state): UserRole => state.profile?.role,
     getAllUsers: (state): Profile[] => state.users,
     getToken: (state): string => state.profile?.token ?? "",
   },

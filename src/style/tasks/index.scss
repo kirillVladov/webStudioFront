@@ -15,13 +15,35 @@
   &-item {
     display: flex;
     justify-content: space-between;
-    padding: 20px;
+    padding: 30px;
     transition: .3s;
     border-bottom: 1px solid #f9fafb;
 
+    &__info > * {
+      margin-bottom: 10px;
+    }
+
     &__action {
       display: flex;
+      align-items: center;
       gap: 10px;
+    }
+
+    &__header {
+      font-size: 24px;
+      font-width: 700;
+    }
+
+    &__price {
+      font-size: 20px;
+    }
+
+    &__date {
+      color: #bbbbbb;
+    }
+
+    &__name {
+      margin-right: 10px;
     }
 
     &__open svg {

@@ -4,11 +4,15 @@ import { useModalStore } from "../stores/modal";
 import AddTaskModalComponent from "../components/common/modals/AddTaskModalComponent.vue";
 import { useTasksStore } from "../stores/tasks";
 import { onBeforeMount, ref } from "vue";
-import { useRouter } from "vue-router";
+import { useRoute, useRouter } from "vue-router";
+import { useUserStroe } from "../stores/user";
+import TaskDetail from "./TaskDetail.vue";
 
 const taskStore = useTasksStore();
+const userStore = useUserStroe();
 const modalStore = useModalStore();
 const router = useRouter();
+const route = useRoute();
 
 const currentPage = ref(1);
 
@@ -34,9 +38,18 @@ const onEditTask = (id: string) => {
 </script>
 
 <template>
-  <div class="tasks">
-    <div class="tasks__add pointer" @click="onAddTask">+ add task</div>
-    <div class="tasks__header"></div>
+  <template v-if="route.params?.id">
+    <task-detail />
+  </template>
+  <div class="tasks" v-else>
+    <div
+      class="tasks__add pointer"
+      v-if="userStore.getUserRole === 'employer'"
+      @click="onAddTask"
+    >
+      + add task
+    </div>
+    <div class="tasks__header">filter</div>
     <div class="tasks__list">
       <tasks-item-component
         :task-item="task"

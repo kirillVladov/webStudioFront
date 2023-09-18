@@ -28,7 +28,7 @@ const model: Ref<AddTaskRequest> = ref({
 const resetModel = () => {
   model.value = {
     header: "",
-    tags: "",
+    tags: [""],
     description: "",
     price: 0,
     priority: "low",

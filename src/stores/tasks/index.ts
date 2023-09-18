@@ -37,6 +37,9 @@ export const useTasksStore = defineStore("tasks-store", {
         this.tasksList.splice(taskIndex, 1);
       }
     },
+    async updateTask(id: string) {
+      return await api.updateTask(id);
+    },
   },
   getters: {
     getTaskList: (state) => state.tasksList,
