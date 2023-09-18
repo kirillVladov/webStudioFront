@@ -3,23 +3,30 @@ import { ref } from "vue";
 import {
   ActionStatus,
   ActionTab,
-  ActionTabType,
   ActionTabValue,
 } from "../../../types/actions";
 
 const actions: ActionTabValue[] = [
   {
-    name: "history",
-    value: ActionTabType.history,
+    name: "All",
+    value: "",
   },
   {
-    name: "not read",
-    value: ActionTabType.active,
+    name: "Allowed",
+    value: ActionStatus.allowed,
+  },
+  {
+    name: "Declined",
+    value: ActionStatus.declined,
+  },
+  {
+    name: "Awaiting",
+    value: ActionStatus.awaiting,
   },
 ];
 
 const emit = defineEmits(["select"]);
-const currentTab = ref<ActionTab>("history");
+const currentTab = ref<ActionTab>("");
 
 const onSelect = (action: ActionTab) => {
   currentTab.value = action;

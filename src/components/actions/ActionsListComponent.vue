@@ -33,8 +33,8 @@ const getStatusColor = (color: ActionStatus): ActionStatusColorType => {
     <div
       class="actions-list__item pointer"
       v-for="action in list"
-      :key="`action-item-${action.id}`"
-      @click="emit('openTask', action.id)"
+      :key="`action-item-${action.actionId}`"
+      @click="emit('openTask', action.actionId)"
     >
       <div
         class="actions-list__item--status pointer"
@@ -50,18 +50,18 @@ const getStatusColor = (color: ActionStatus): ActionStatusColorType => {
         </div>
       </div>
       <white-rabbit-font-component class="actions-list__item--date">
-        {{ action.date }}
+        {{ action.expirationDate }}
       </white-rabbit-font-component>
       <div class="actions-list__item--controllers">
         <span
           class="actions-list__item--message pointer"
-          @click.prevent.stop="emit('startChat', action.id)"
+          @click.prevent.stop="emit('startChat', action.actionId)"
         >
           <svg-message />
         </span>
         <span
           class="actions-list__item--delete pointer"
-          @click.prevent.stop="emit('delete', action.id)"
+          @click.prevent.stop="emit('delete', action.actionId)"
         >
           <svg-delete />
         </span>

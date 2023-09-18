@@ -1,6 +1,7 @@
 import { defineStore, StateTree } from "pinia";
 import { Action } from "../../../types/tasks/Actions";
 import api from "../../services/api/api";
+import { ActionTab } from "../../../types/actions";
 
 interface State extends StateTree {
   actions: Action[];
@@ -11,14 +12,22 @@ export const useActionStore = defineStore("action-store", {
     actions: [],
   }),
   actions: {
-    async updateActionsList() {
-      await api.updateActionsList();
+    async updateActionsList(status?: ActionTab) {
+      this.actions = await api.updateActionsList(status);
     },
     async addAction(data: Action) {
       await api.addAction(data);
     },
     async deleteAction(actionId: string) {
-      await api.deleteAction(actionId);
+      const response = await api.deleteAction(actionId);
+
+      if (response.success === "ok") {
+        const actionIndex = this.actions.findIndex(
+          (item) => item.actionId === actionId
+        );
+
+        this.actions.splice(actionIndex, 1);
+      }
     },
   },
   getters: {
