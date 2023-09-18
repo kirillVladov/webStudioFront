@@ -5,11 +5,13 @@
 @import "team";
 @import "resources";
 @import "../layout/landing-menu";
+@import "pricing";
 
 .projects,
 .benefits,
 .contact-us,
 .landing__full-screen,
+.landing-price__wrap,
 .resources,
 .team{
   padding: 50px 135px;
@@ -20,6 +22,7 @@
   .benefits,
   .contact-us,
   .landing__full-screen,
+  .landing-price__wrap,
   .resources,
   .team{
     padding: 50px 50px;
