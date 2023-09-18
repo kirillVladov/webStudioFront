@@ -1,0 +1,65 @@
+.landing-price {
+  background: rgba(216, 241, 255, 1);
+
+  &__description {
+    margin-top: 30px;
+    margin-bottom: 50px;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+
+  }
+
+  &__item {
+    background: #FFFFFF;
+    padding: 20px;
+
+    &-name {
+      font-family: 'Source Code Pro', monospace;
+      font-weight: 900;
+      font-size: 32px;
+      line-height: 32px;
+    }
+
+    &-description{
+      font-weight: 300;
+      max-width: 219px;
+      margin: 20px 0;
+    }
+
+    &-price {
+      font-size: 64px;
+      line-height:64px;
+      font-weight: 900;
+      font-family: 'Source Code Pro', monospace;
+      margin-bottom: 20px;
+    }
+
+    &-advantages {
+      &-title {
+        font-family: 'Source Code Pro', monospace;
+        font-size: 24px;
+        line-height: 24px;
+        font-weight: 500;
+        margin-bottom: 20px;
+      }
+
+      &-item {
+        display: flex;
+        font-weight: 500;
+        font-family: 'Source Code Pro', monospace;
+
+        &:not(:last-of-type) {
+          margin-bottom: 15px;
+        }
+
+        & svg {
+          margin-right: 15px;
+        }
+      }
+    }
+  }
+}

@@ -5,6 +5,7 @@ import TeamComponent from "../../components/landing/TeamComponent.vue";
 import ContactUsComponent from "../../components/landing/ContactUsComponent.vue";
 import ContactUsModalComponent from "../../components/common/modals/ContactUsModalComponent.vue";
 import ResourcesComponent from "../../components/landing/Resources/ResourcesComponent.vue";
+import PriceComponent from "../../components/landing/PriceComponent.vue";
 
 export default [
   {
@@ -26,6 +27,11 @@ export default [
     name: "Team",
     link: "team",
     component: TeamComponent,
+  },
+  {
+    name: "Pricing",
+    link: "pricing",
+    component: PriceComponent,
   },
   {
     name: "Resources",

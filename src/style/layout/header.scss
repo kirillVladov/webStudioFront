@@ -1,9 +1,11 @@
+@import "@/style/variables";
+
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 5px 100px;
-  background: #9cbcf8;
+  background: $full-screen-bg;
 
   &__rightside {
     display: flex;
