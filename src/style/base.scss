@@ -10,6 +10,10 @@ body {
   margin: 0;
   font-family: 'Urbanist', sans-serif;
   background: $color-light-gray;
+
+  &.dark {
+    background: #000000;
+  }
 }
 
 a {
