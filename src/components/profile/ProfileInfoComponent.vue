@@ -100,19 +100,26 @@ const onChangePassword = (): undefined => {
       <div class="profile-info__name">
         <span class="profile-info__title"> Current password </span>
         <span class="profile-info__field">
-          <input-field-component v-model="changePasswordModel.oldPassword" />
+          <input-field-component
+            type="password"
+            v-model="changePasswordModel.oldPassword"
+          />
         </span>
       </div>
       <div class="profile-info__name">
         <span class="profile-info__title"> New password </span>
         <span class="profile-info__field">
-          <input-field-component v-model="changePasswordModel.password" />
+          <input-field-component
+            type="password"
+            v-model="changePasswordModel.password"
+          />
         </span>
       </div>
       <div class="profile-info__name">
         <span class="profile-info__title"> Repeat new password </span>
         <span class="profile-info__field">
           <input-field-component
+            type="password"
             v-model="changePasswordModel.confirmPassword"
           />
         </span>
