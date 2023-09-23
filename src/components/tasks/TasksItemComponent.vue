@@ -41,12 +41,12 @@ const taskItem: Ref<Task> = toRef(props, "taskItem");
     </div>
 
     <div class="tasks-item__action">
-      <div
-        class="tasks-item__edit pointer"
-        @click.prevent.stop="emit('edit', taskItem.taskId)"
-      >
-        <svg-edit />
-      </div>
+      <!--      <div-->
+      <!--        class="tasks-item__edit pointer"-->
+      <!--        @click.prevent.stop="emit('edit', taskItem.taskId)"-->
+      <!--      >-->
+      <!--        <svg-edit />-->
+      <!--      </div>-->
       <div
         class="tasks-item__delete pointer"
         @click.prevent.stop="emit('delete', taskItem.taskId)"

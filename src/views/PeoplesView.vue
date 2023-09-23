@@ -21,9 +21,9 @@ const TEMP_PEOPLES = [
 
 <template>
   <div class="peoples">
-    <div class="peoples__header">
-      <filter-component :items="TEMP_PEOPLES" />
-    </div>
+    <!--    <div class="peoples__header">-->
+    <!--      <filter-component :items="TEMP_PEOPLES" />-->
+    <!--    </div>-->
     <div class="peoples__list">
       <people-item
         v-for="(user, idx) in userStore.getAllUsers"

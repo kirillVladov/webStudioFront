@@ -53,12 +53,12 @@ const getStatusColor = (color: ActionStatus): ActionStatusColorType => {
         {{ action.expirationDate }}
       </white-rabbit-font-component>
       <div class="actions-list__item--controllers">
-        <span
-          class="actions-list__item--message pointer"
-          @click.prevent.stop="emit('startChat', action.actionId)"
-        >
-          <svg-message />
-        </span>
+        <!--        <span-->
+        <!--          class="actions-list__item&#45;&#45;message pointer"-->
+        <!--          @click.prevent.stop="emit('startChat', action.actionId)"-->
+        <!--        >-->
+        <!--          <svg-message />-->
+        <!--        </span>-->
         <span
           class="actions-list__item--delete pointer"
           @click.prevent.stop="emit('delete', action.actionId)"

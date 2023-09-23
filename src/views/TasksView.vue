@@ -49,7 +49,7 @@ const onEditTask = (id: string) => {
     >
       + add task
     </div>
-    <div class="tasks__header">filter</div>
+    <!--    <div class="tasks__header">filter</div>-->
     <div class="tasks__list">
       <tasks-item-component
         :task-item="task"
