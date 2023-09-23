@@ -1,36 +1,44 @@
 @import "@/style/variables";
 
 .peoples {
-  display: grid;
-  padding: 40px 20px;
-  box-shadow: 11px 12px 22px 0 rgba(62, 128, 255, 0.18);
-  grid-template-columns: repeat(auto-fill, minmax(calc(100% / 4), 1fr));
-  background: $color-white-text;
   width: 100%;
 
-  &-item {
-    &:not(:last-of-type) {
-      margin-right: 50px;
-    }
+  &__header {
+    margin-bottom: 20px;
+  }
 
-    &__name {
-      margin-bottom: 20px;
-      font-weight: 900;
-      font-size: 20px;
-    }
+  &__list {
 
-    &__image {
-      min-height: 320px;
-      min-width: 240px;
-      max-height: 320px;
-      max-width: 240px;
-      margin-bottom: 30px;
+    display: grid;
+    padding: 40px 20px;
+    box-shadow: 11px 12px 22px 0 rgba(62, 128, 255, 0.18);
+    grid-template-columns: repeat(auto-fill, minmax(calc(100% / 4), 1fr));
+    background: $color-white-text;
 
-      & > img {
-        max-width: 100%;
-        max-height: 100%;
-        min-width: 100%;
-        min-height: 100%;
+    &-item {
+      &:not(:last-of-type) {
+        margin-right: 50px;
+      }
+
+      &__name {
+        margin-bottom: 20px;
+        font-weight: 900;
+        font-size: 20px;
+      }
+
+      &__image {
+        min-height: 320px;
+        min-width: 240px;
+        max-height: 320px;
+        max-width: 240px;
+        margin-bottom: 30px;
+
+        & > img {
+          max-width: 100%;
+          max-height: 100%;
+          min-width: 100%;
+          min-height: 100%;
+        }
       }
     }
   }
