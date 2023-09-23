@@ -1,7 +1,6 @@
 import { defineStore, StateTree } from "pinia";
 import type { LangType, ThemeType } from "../../../types/common/settings";
 import { changeLocale } from "../../services/translates";
-import { nextTick } from "vue";
 
 interface State extends StateTree {
   lang: LangType;
@@ -22,19 +21,9 @@ export const useSettingsStore = defineStore("settingsStore", {
 
       changeLocale(value);
     },
-    switchTheme: function (): void {
+    setTheme: function (value: ThemeType): void {
       this.$patch((state) => {
-        state.theme = state.theme === "light" ? "dark" : "light";
-      });
-
-      nextTick().then(() => {
-        const mainBlock = document.body;
-
-        if (this.theme === "dark") {
-          mainBlock.classList.add("dark");
-        } else {
-          mainBlock.classList.remove("dark");
-        }
+        state.theme = value;
       });
     },
   },

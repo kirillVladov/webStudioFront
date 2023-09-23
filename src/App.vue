@@ -5,21 +5,14 @@ import MenuComopnent from "@/components/layout/MenuComopnent.vue";
 import { computed, onBeforeMount } from "vue";
 import { useRoute } from "vue-router";
 import { useUserStroe } from "@/stores/user";
-import { useSettingsStore } from "@/stores/settings/index";
 
 const route = useRoute();
 const userStore = useUserStroe();
-const settingsStore = useSettingsStore();
 const isRouteLanding = computed(() => route.path === "/");
 
 const init = async () => {
   if (userStore.getProfile) {
     await userStore.updateProfile();
-  }
-
-  if (settingsStore.theme === "dark") {
-    const mainBlock = document.body;
-    mainBlock.classList.add("dark");
   }
 };
 
