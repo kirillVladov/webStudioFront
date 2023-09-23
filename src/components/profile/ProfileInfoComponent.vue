@@ -47,11 +47,11 @@ const onChangePassword = (): undefined => {
 
 <template>
   <div class="profile-info">
-    <section-header-component class="profile-info__header">
-      <white-rabbit-font-component>
-        Profile information
-      </white-rabbit-font-component>
-    </section-header-component>
+    <!--    <section-header-component class="profile-info__header">-->
+    <white-rabbit-font-component class="profile-info__header">
+      Profile information
+    </white-rabbit-font-component>
+    <!--    </section-header-component>-->
     <div class="profile-info__fields">
       <div class="profile-info__name">
         <span class="profile-info__title"> Name </span>
@@ -91,11 +91,9 @@ const onChangePassword = (): undefined => {
     <div class="profile-info__submit">
       <button-component @click="onUpdate" title="Update" />
     </div>
-    <section-header-component class="profile-info__header">
-      <white-rabbit-font-component>
-        Change password
-      </white-rabbit-font-component>
-    </section-header-component>
+    <white-rabbit-font-component class="profile-info__header">
+      Change password
+    </white-rabbit-font-component>
     <div class="profile-info__fields">
       <div class="profile-info__name">
         <span class="profile-info__title"> Current password </span>
