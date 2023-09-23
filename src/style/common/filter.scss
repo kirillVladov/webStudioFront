@@ -1,0 +1,30 @@
+@import "../variables";
+
+.filter {
+  background: $color-white-text;
+  box-shadow: 11px 12px 22px 0 rgba(62, 128, 255, 0.18);
+  display: grid;
+  grid-template-columns: 80px auto 170px;
+  background: #FFFFFF;
+  padding: 10px;
+
+  &__item {
+    position: relative;
+    margin-right: 20px;
+    transition: .3s;
+
+    &:hover,
+    &.active{
+      color: $color-button-hover;
+
+      &:before {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        width: 100%;
+        height: 2px;
+        background: $color-button-hover;
+      }
+    }
+  }
+}
