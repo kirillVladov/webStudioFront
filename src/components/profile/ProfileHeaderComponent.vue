@@ -13,7 +13,7 @@ const props = defineProps({
 <template>
   <div class="profile-header">
     <span class="profile-header__avatar">
-      <user-image :picture="user.avatar" />
+      <user-image use-edit :picture="user.avatar" />
     </span>
     <div class="profile-header__info">
       <div class="profile-header__name">

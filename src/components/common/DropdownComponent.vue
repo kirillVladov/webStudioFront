@@ -2,7 +2,7 @@
 import type { ModelList } from "../../../types/common/Dropdown";
 import { onBeforeMount, onMounted, type Ref, ref } from "vue";
 import { FALSE } from "sass";
-import SvgArrowDown from "../../assets/svg/common/SvgArrowDown.vue";
+import SvgArrowDown from "../../assets/svg/SvgArrowDown.vue";
 
 const props = defineProps({
   list: {

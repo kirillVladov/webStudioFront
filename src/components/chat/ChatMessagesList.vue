@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { ChatMessageType, RoomType } from "../../../types/chat";
-import SvgArrowDown from "../../assets/svg/common/SvgArrowDown.vue";
+import SvgArrowDown from "../../assets/svg/SvgArrowDown.vue";
 import SvgAdd from "../../assets/svg/chat/SvgAdd.vue";
 import InputFieldComponent from "../common/InputFieldComponent.vue";
 import { Ref, ref } from "vue";

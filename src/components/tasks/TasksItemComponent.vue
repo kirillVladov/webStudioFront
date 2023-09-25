@@ -1,9 +1,9 @@
 <script lang="ts" setup>
 import { Ref, toRef } from "vue";
 import { Task } from "../../../types/tasks";
-import SvgEdit from "../../assets/svg/common/SvgEdit.vue";
-import SvgDelete from "../../assets/svg/common/SvgDelete.vue";
-import SvgArrowDown from "../../assets/svg/common/SvgArrowDown.vue";
+import SvgEdit from "../../assets/svg/SvgEdit.vue";
+import SvgDelete from "../../assets/svg/SvgDelete.vue";
+import SvgArrowDown from "../../assets/svg/SvgArrowDown.vue";
 import { prepareCurrencyToSymbol } from "../../services/common";
 import ButtonComponent from "../common/ButtonComponent.vue";
 import SvgFire from "../../assets/svg/tasks/SvgFire.vue";

@@ -1,0 +1,11 @@
+.upload-modal {
+  & .modal-window__content {
+    height: unset;
+    min-height: unset;
+  }
+
+  &__cropper {
+    width: 100%;
+    height: 100%;
+  }
+}

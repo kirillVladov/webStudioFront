@@ -21,6 +21,7 @@
     "swiper": "^10.2.0",
     "vue": "^3.3.4",
     "vue-advanced-chat": "^2.0.7",
+    "vue-advanced-cropper": "^2.8.8",
     "vue-i18n": "9",
     "vue-router": "^4.2.4"
   },
@@ -34,11 +35,11 @@
     "@vue/eslint-config-prettier": "^7.0.0",
     "@vue/eslint-config-typescript": "^11.0.0",
     "eslint": "^8.48.0",
-    "sockjs": "^0.3.24",
     "eslint-plugin-cypress": "^2.12.1",
     "eslint-plugin-vue": "^9.17.0",
     "prettier": "^2.5.1",
     "socket.io-client": "2.1.1",
+    "sockjs": "^0.3.24",
     "vite": "^4.4.5",
     "vue-3-ts-socket.io": "^1.0.3",
     "vue-cli-plugin-i18n": "~2.3.2"
