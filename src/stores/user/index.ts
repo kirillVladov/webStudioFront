@@ -8,6 +8,7 @@ import {
 } from "../../../types/common/user";
 import api from "../../services/api/api";
 import { useRouter } from "vue-router";
+import { isEqual } from "lodash";
 
 interface State extends StateTree {
   profile: Profile | null;
@@ -21,8 +22,12 @@ export const useUserStroe = defineStore("user-store", {
     users: [],
   }),
   actions: {
-    async updateProfile(): Promise<Profile> {
-      return await api.updateProfile();
+    async updateProfile(): Promise<void> {
+      api.updateProfile().then((response) => {
+        if (!isEqual(this.profile, response)) {
+          this.profile = response;
+        }
+      });
     },
     async logOut(): Promise<void> {
       await this.$router.push({ name: "landing" });

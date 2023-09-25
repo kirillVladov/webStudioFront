@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import SvgDelete from "../../assets/svg/common/SvgDelete.vue";
+import SvgDelete from "../../assets/svg/SvgDelete.vue";
 import SvgMessage from "../../assets/svg/chat/SvgMessage.vue";
 import { ActionStatus } from "../../../types/actions";
 import WhiteRabbitFontComponent from "../common/WhiteRabbitFontComponent.vue";

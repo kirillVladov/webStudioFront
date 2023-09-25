@@ -2,7 +2,7 @@
 import { useRouter } from "vue-router";
 import { onBeforeMount, ref } from "vue";
 import { useTasksStore } from "../stores/tasks";
-import SvgArrowDown from "../assets/svg/common/SvgArrowDown.vue";
+import SvgArrowDown from "../assets/svg/SvgArrowDown.vue";
 import { Task } from "../../types/tasks";
 import SvgFire from "../assets/svg/tasks/SvgFire.vue";
 import { prepareCurrencyToSymbol } from "../services/common";

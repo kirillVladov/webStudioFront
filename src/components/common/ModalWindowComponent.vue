@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import SvgClose from "../../assets/svg/common/modal/SvgClose.vue";
+import SvgClose from "../../assets/svg/modal/SvgClose.vue";
 import { useModalStore } from "../../stores/modal";
 import type { ModalState } from "../../../types/common/modal";
 import { computed, ComputedRef, onMounted, onUnmounted, watch } from "vue";

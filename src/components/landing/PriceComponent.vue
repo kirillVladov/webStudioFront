@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import SectionHeaderComponent from "../common/SectionHeaderComponent.vue";
-import SvgDone from "../../assets/svg/common/SvgDone.vue";
+import SvgDone from "../../assets/svg/SvgDone.vue";
 
 const TEMP_PRICES = [
   {
