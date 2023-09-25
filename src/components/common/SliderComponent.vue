@@ -43,7 +43,7 @@ const onSlideChange = (index: number) => {
     >
       <swiper-slide class="slider__item" v-for="item in list">
         <div class="slider__item-image">
-          <img :src="item.image" :alt="item.name" />
+          <img :src="item.avatar" :alt="item.name" />
         </div>
         <div class="slider__item-name">
           {{ item.name }}

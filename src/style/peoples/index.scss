@@ -20,6 +20,10 @@
         margin-right: 50px;
       }
 
+      &:hover .peoples__list-item__image {
+        box-shadow: 13px 11px 0 #6989fc;
+      }
+
       &__name {
         margin-bottom: 20px;
         font-weight: 900;
@@ -27,6 +31,7 @@
       }
 
       &__image {
+        position: relative;
         min-height: 320px;
         min-width: 240px;
         max-height: 320px;
@@ -34,6 +39,8 @@
         margin-bottom: 30px;
 
         & > img {
+          position: absolute;
+          object-fit: cover;
           max-width: 100%;
           max-height: 100%;
           min-width: 100%;

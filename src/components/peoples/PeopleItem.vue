@@ -10,11 +10,11 @@ defineProps({
 </script>
 
 <template>
-  <div class="peoples-item">
-    <div class="peoples-item__image">
+  <div class="peoples__list-item">
+    <div class="peoples__list-item__image">
       <img :src="user?.avatar" :alt="user.name" />
     </div>
-    <div class="peoples-item__name">
+    <div class="peoples__list-item__name">
       {{ user.name }}
     </div>
     <div v-if="user.hasOwnProperty('role')" class="peoples-item__role">

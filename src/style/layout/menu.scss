@@ -12,7 +12,7 @@
     }
 
     &:has(a.router-link-active) {
-      background: #9E77ED;
+      background: #6989fc;
       & a {
         color: $color-white-text;
       }
@@ -24,7 +24,7 @@
     }
 
     &:hover {
-      background: #9E77ED;
+      background: #6989fc;
       ////opacity: .7;
       //
       & a {
