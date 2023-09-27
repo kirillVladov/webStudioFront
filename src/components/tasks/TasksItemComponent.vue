@@ -14,7 +14,7 @@ const props = defineProps({
     required: true,
   },
 });
-const emit = defineEmits(["openTask", "edit", "delete"]);
+const emit = defineEmits(["openTask", "edit", "delete", "submit"]);
 const taskItem: Ref<Task> = toRef(props, "taskItem");
 </script>
 
@@ -54,7 +54,11 @@ const taskItem: Ref<Task> = toRef(props, "taskItem");
         <svg-delete />
       </div>
       <div class="tasks-item__response">
-        <button-component class-purple title="Откликнуться" />
+        <button-component
+          class-purple
+          @click.prevent.stop="emit('submit')"
+          title="Откликнуться"
+        />
       </div>
     </div>
   </div>

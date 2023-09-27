@@ -1,6 +1,6 @@
 import $http from "../http";
 import { Action } from "../../../../types/tasks/Actions";
-import { ActionTab } from "../../../../types/actions";
+import { ActionTab, SubmitActionResponse } from "../../../../types/actions";
 import { SuccessResponse } from "../../../../types/common/responses";
 
 const base = "/actions";
@@ -8,7 +8,7 @@ export async function updateActionsList(status?: ActionTab) {
   return await $http.get(`${base}/list`, { params: { status } });
 }
 
-export async function addAction(data: Action) {
+export async function addAction(data: SubmitActionResponse) {
   return await $http.post(base, data);
 }
 

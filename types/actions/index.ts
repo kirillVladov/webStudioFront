@@ -10,3 +10,10 @@ export enum ActionStatus {
   allowed = "allowed",
   awaiting = "awaiting",
 }
+
+export interface SubmitActionResponse {
+  userId: string;
+  taskId: string;
+  expirationDate: string;
+  status: ActionStatus;
+}

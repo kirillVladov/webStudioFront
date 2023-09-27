@@ -7,9 +7,14 @@ import { onBeforeMount, ref } from "vue";
 import { useRoute, useRouter } from "vue-router";
 import { useUserStroe } from "../stores/user";
 import TaskDetail from "./TaskDetail.vue";
+import { Task } from "../../types/tasks";
+import { useActionStore } from "../stores/actions";
+import moment from "moment";
+import { ActionStatus } from "../../types/actions";
 
 const taskStore = useTasksStore();
 const userStore = useUserStroe();
+const actionStore = useActionStore();
 const modalStore = useModalStore();
 const router = useRouter();
 const route = useRoute();
@@ -35,6 +40,15 @@ const onOpenTask = (id: string) => {
 const onEditTask = (id: string) => {
   console.log(id + " deleted");
 };
+
+const onSubmitTask = (task: Task) => {
+  actionStore.addAction({
+    taskId: task.taskId,
+    userId: userStore.getProfile?.userId,
+    expirationDate: moment().format("YYYY-MM-DD"),
+    status: ActionStatus.awaiting,
+  });
+};
 </script>
 
 <template>
@@ -56,6 +70,7 @@ const onEditTask = (id: string) => {
         v-for="task in taskStore.getTaskList"
         :key="`task-item-${task.id}`"
         @open-task="onOpenTask"
+        @submit="onSubmitTask(task)"
         @edit="onEditTask"
         @delete="onDelete"
       />

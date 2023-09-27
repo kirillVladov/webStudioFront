@@ -1,7 +1,7 @@
 import { defineStore, StateTree } from "pinia";
 import { Action } from "../../../types/tasks/Actions";
 import api from "../../services/api/api";
-import { ActionTab } from "../../../types/actions";
+import { ActionTab, SubmitActionResponse } from "../../../types/actions";
 
 interface State extends StateTree {
   actions: Action[];
@@ -15,8 +15,9 @@ export const useActionStore = defineStore("action-store", {
     async updateActionsList(status?: ActionTab) {
       this.actions = await api.updateActionsList(status);
     },
-    async addAction(data: Action) {
-      await api.addAction(data);
+    async addAction(data: SubmitActionResponse) {
+      const response = await api.addAction(data);
+      console.log(response);
     },
     async deleteAction(actionId: string) {
       const response = await api.deleteAction(actionId);
